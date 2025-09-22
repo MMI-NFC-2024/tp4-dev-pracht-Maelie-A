@@ -1,21 +1,21 @@
 ---
-import PlotFigure from "../components/PlotFigure.astro";
 import Layout from "../layouts/Layout.astro";
-import * as Plot from "@observablehq/plot";
-import penguins from "../assets/penguins.json";
 ---
 
-<Layout>
-  <h1 class="text-2xl">Test Astro et Plot (Observablehq)</h1>
-  <PlotFigure
-    options={{
-      marks: [
-        Plot.dot(penguins, {
-          x: "culmen_length_mm",
-          y: "culmen_depth_mm",
-          stroke: "species",
-        }),
-      ],
-    }}
-  />
+<Layout title="TP4 – Accueil">
+  <h1 style="margin:0 0 .5rem;font-size:clamp(1.5rem,2.5vw,2.2rem);font-weight:800;">
+    TP4 — Graphiques côté client (Observable Plot)
+  </h1>
+  <p style="opacity:.8;margin:.25rem 0 1.25rem">
+    Utilise le menu ci-dessus pour voir les différents essais :
+    simple, penguins, et penguins avec filtres (1 puis 3 filtres).
+  </p>
+
+  <ul style="line-height:1.8">
+    <li><strong>Simple</strong> : barres avec données générées.</li>
+    <li><strong>Penguins</strong> : scatter de tout le dataset.</li>
+    <li><strong>Penguins + filtre</strong> : 1 select pour l’espèce.</li>
+    <li><strong>Penguins + filtres (3)</strong> : espèce, île et sexe.</li>
+  </ul>
 </Layout>
+
